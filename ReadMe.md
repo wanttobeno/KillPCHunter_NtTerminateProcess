@@ -69,7 +69,9 @@ NtTerminateProcess()
 
     PsExitSpecialApc();
 
-    KeInitializeApc();	// 情况二,关闭掉别的线程:在对方线线程中插入一个内核apc,这个内核apc最后会				调用PspExitThread函数
+    KeInitializeApc();	// 情况二,关闭掉别的线程:在对方线线程中插入一个内核apc,
+
+                        // 这个内核apc最后会调用PspExitThread函数
 
     KeInsertQueueApc();
 
